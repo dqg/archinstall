@@ -1,9 +1,5 @@
 #!/bin/sh
 
-echo "
-[chaotic-aur]
-Include = /etc/pacman.d/chaotic-mirrorlist" >>/etc/pacman.conf
-
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
@@ -15,4 +11,4 @@ locale-gen
 ln -sf /usr/share/zoneinfo/Asia/Colombo /etc/localtime
 hwclock -w
 echo "arch" >/etc/hostname
-passwd -d root
+echo "root:password" | chpasswd

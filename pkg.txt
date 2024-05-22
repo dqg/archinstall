@@ -4,5 +4,6 @@ linux
 linux-firmware
 grub
 efibootmgr
+git
 dash
 networkmanager
